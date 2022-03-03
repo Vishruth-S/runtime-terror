@@ -1,7 +1,10 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
+import RequireAuth from './Components/RequireAuth';
+import CreateBankAccount from './pages/CreateBankAccount';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import SendMoney from './pages/SendMoney';
 
 function App() {
   return (
@@ -10,6 +13,8 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/createacc" element={<RequireAuth><CreateBankAccount /></RequireAuth>} />
+          <Route path="/sendmoney" element={<RequireAuth><SendMoney /></RequireAuth>} />
         </Routes>
       </Router>
     </div>
