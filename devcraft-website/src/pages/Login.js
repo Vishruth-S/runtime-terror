@@ -41,7 +41,10 @@ function Login() {
     return (
         <>
             {user ?
-                <h2>You are already logged in</h2>
+                <div>
+                    <h2>You are already logged in</h2>
+                    <button onClick={logout}>logout</button>
+                </div>
                 : <div class="formC">
                     <h2 class="title">
                         welcome

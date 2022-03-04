@@ -18,7 +18,7 @@ const CreateBankAccount = () => {
             accno: accno,
             userId: user.uid,
             type: type,
-            balance: balance,
+            balance: Number(balance),
             cards: []
         }).then(
             updateUserAccounts()
