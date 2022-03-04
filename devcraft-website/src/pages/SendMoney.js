@@ -1,5 +1,5 @@
 import { onAuthStateChanged } from 'firebase/auth';
-import { addDoc, collection, doc, getDoc, getDocs, increment, query, updateDoc, where } from 'firebase/firestore';
+import { addDoc, arrayUnion, collection, doc, getDoc, getDocs, increment, query, setDoc, updateDoc, where } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
 import { auth, db } from '../firebase-config';
 
@@ -50,11 +50,11 @@ const SendMoney = () => {
         // TODO ----- if not found check
         if (Number(amount) > Number(senderAccountData.balance))
             return alert("Insufficient funds")
-        const transactionsCollectionRef = collection(db, "transactions")
+        const transactionsCollectionRef = doc(collection(db, "transactions"))
         let date = new Date()
         date = date.toString().slice(0, 10)
 
-        await addDoc(transactionsCollectionRef,
+        await setDoc(transactionsCollectionRef,
             {
                 fromUser: user.uid,
                 toUser: receiver.uid,
@@ -65,13 +65,22 @@ const SendMoney = () => {
         ).then(async () => {
             const receiverAccount = receiver.accounts[0]
             await updateDoc(senderAccountRef, {
+                transactions: arrayUnion(transactionsCollectionRef.id),
                 balance: increment(-1 * amount)
             });
+            await updateDoc(senderdocRef, {
+                transactions: arrayUnion(transactionsCollectionRef.id),
+            })
 
             const receiverAccountRef = doc(db, "accounts", receiverAccount);
             await updateDoc(receiverAccountRef, {
+                transactions: arrayUnion(transactionsCollectionRef.id),
                 balance: increment(amount)
             });
+            const recieverdocRef = doc(db, "users", receiver.uid);
+            await updateDoc(recieverdocRef, {
+                transactions: arrayUnion(transactionsCollectionRef.id),
+            })
             alert("successfull")
         }
         ).catch(e => alert(e))
