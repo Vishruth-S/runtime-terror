@@ -1,6 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
 import RequireAuth from './Components/RequireAuth';
+import Transactions from './Components/Transactions';
 import CreateBankAccount from './pages/CreateBankAccount';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -15,6 +16,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/createacc" element={<RequireAuth><CreateBankAccount /></RequireAuth>} />
           <Route path="/sendmoney" element={<RequireAuth><SendMoney /></RequireAuth>} />
+          <Route path="/transactions" element={<RequireAuth><Transactions /></RequireAuth>} />
         </Routes>
       </Router>
     </div>
