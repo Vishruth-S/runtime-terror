@@ -1,0 +1,11 @@
+.qt-img {
+    width: 40px;
+}
+
+.qt-cards-container {
+    padding: 20px;
+    /* box-shadow: -2px -1px 5px #aaaaaa; */
+    box-shadow: 0px 2px 15px 20px rgb(0 0 0 / 4%);
+    border-radius: 13px;
+    margin: 17px;
+}

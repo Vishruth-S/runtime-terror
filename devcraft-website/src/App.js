@@ -5,6 +5,7 @@ import Transactions from './Components/Transactions';
 import CreateBankAccount from './pages/CreateBankAccount';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Overview from './pages/Overview';
 import Register from './pages/Register';
 import SendMoney from './pages/SendMoney';
 
@@ -14,6 +15,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/overview" element={<Overview />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/createacc" element={<RequireAuth><CreateBankAccount /></RequireAuth>} />
