@@ -65,21 +65,21 @@ const SendMoney = () => {
         ).then(async () => {
             const receiverAccount = receiver.accounts[0]
             await updateDoc(senderAccountRef, {
-                transactions: arrayUnion(transactionsCollectionRef.id),
+                sentTransactions: arrayUnion(transactionsCollectionRef.id),
                 balance: increment(-1 * amount)
             });
             await updateDoc(senderdocRef, {
-                transactions: arrayUnion(transactionsCollectionRef.id),
+                sentTransactions: arrayUnion(transactionsCollectionRef.id),
             })
 
             const receiverAccountRef = doc(db, "accounts", receiverAccount);
             await updateDoc(receiverAccountRef, {
-                transactions: arrayUnion(transactionsCollectionRef.id),
+                receivedTransactions: arrayUnion(transactionsCollectionRef.id),
                 balance: increment(amount)
             });
             const recieverdocRef = doc(db, "users", receiver.uid);
             await updateDoc(recieverdocRef, {
-                transactions: arrayUnion(transactionsCollectionRef.id),
+                receivedTransactions: arrayUnion(transactionsCollectionRef.id),
             })
             alert("successfull")
         }
