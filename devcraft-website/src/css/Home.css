@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.homeinfo{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.home-download{
+    border-radius: 1.25rem;
+    border: 1px;
+    border-color: rgb(185, 185, 233);
+    margin-right: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    background-color: #6776FFF5;
+    ;
+}
+.home-body{
+    background-color: #5e6ceef5;
+}
+
+.home-features{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
