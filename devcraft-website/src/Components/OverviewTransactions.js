@@ -25,7 +25,7 @@ const OverviewTransactions = () => {
 
     return (
         <div>
-            <div>OverviewTransactions</div>
+            <h2>RECENT TRANSACTIONS</h2>
             <div className='transactions-container'>
                 {transactions.map((tr, id) => (
                     <div key={id}>

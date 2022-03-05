@@ -1,0 +1,38 @@
+.reg-container{
+    width: 25%;
+    margin: auto;
+    padding: 40px;
+    margin-top: 50px;
+    box-shadow: 2px;
+    box-shadow: 1px 10px 18px 3px #cdcdcd8c;
+}
+
+.reg-email {
+    margin-bottom: 1px;
+}
+
+.reg-pass{
+    margin-bottom: 1px;
+}
+
+.reg-email-box {
+    margin-bottom: 25px;
+    margin-top: 50px;
+}
+
+.reg-input {
+    height: 42px;
+    width: 70%;
+    border-radius: 6px;
+    border-width: thin;
+    padding: 10px;
+}
+
+.reg-btn {
+    margin-top: 10px;
+    border: none;
+    width: 125px;
+    height: 40px;
+    border-radius: 12px;
+    cursor: pointer;
+}

@@ -2,6 +2,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { addDoc, arrayUnion, collection, doc, getDoc, getDocs, increment, query, setDoc, updateDoc, where } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
 import { auth, db } from '../firebase-config';
+import '../css/Sendmoney.css'
 
 const SendMoney = () => {
 
@@ -18,6 +19,9 @@ const SendMoney = () => {
     const [receiverphone, setReceiverphone] = useState('')
     const [amount, setAmount] = useState(0)
     const [user, setUser] = useState({});
+    const [filteredUsers, setFilteredUsers] = useState([])
+    const [selected, setSelected] = useState(false)
+    const [selectedUser, setSelectedUser] = useState({})
 
     onAuthStateChanged(auth, (currentUser) => {
         setUser(currentUser);
@@ -36,7 +40,14 @@ const SendMoney = () => {
     }, [])
 
 
-    const makeTransaction = async () => {
+    const filterUsers = (num) => {
+        setSelected(false)
+        const temp = allUsers.filter(user => num.length > 0 && user.phone.indexOf(num) === 0)
+        // console.log(temp)
+        setFilteredUsers(temp)
+    }
+
+    const makeTransaction = async (receiverphone) => {
         const receiver = allUsers.filter(u => u.phone === receiverphone)[0]
         const senderdocRef = doc(db, "users", user.uid);
         const docSnap = await getDoc(senderdocRef);
@@ -86,12 +97,54 @@ const SendMoney = () => {
         ).catch(e => alert(e))
     }
 
+    const selectUser = (user) => {
+        // console.log("selected", user)
+        setSelectedUser(user)
+        setSelected(true)
+    }
+
     return (
-        <div>
-            <h2>Send money</h2>
-            <input placeholder='phone number' onChange={e => setReceiverphone(e.target.value)} />
-            <input type="number" onChange={e => setAmount(e.target.value)} />
-            <button onClick={makeTransaction}>send money</button>
+        <div className='send-money-container'>
+            <div className='text-left'>
+                <h2 className='sm-header'>Send Money</h2>
+                <div>
+                    <p>Enter Phone Number</p>
+                    <input className='sm-phone' placeholder='phone number' onChange={e => filterUsers(e.target.value)} />
+                </div>
+                {!selected && filteredUsers.length > 0 && <div className='send-money-results'>
+                    <p>People</p>
+                    {!selected && filteredUsers.map(user => (
+                        <div key={user.uid} onClick={() => selectUser(user)} className='sm-select row'>
+                            <div className='col-2'>
+                                <img className="send-money-pic" src="https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png" />
+                            </div>
+                            <div className='col-10'>
+                                <p className='sm-text'>{user.name}</p>
+                                <p className='sm-phone'>{user.phone}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>}
+                {selected ?
+                    <div className='sending-to'>
+                        <p>Sending to</p>
+                        <div className='row'>
+                            <div className='col-3'>
+                                <img className="send-money-pic" src="https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png" />
+                            </div>
+                            <div className='col-9'>
+                                <p className='sm-text'>{selectedUser.name}</p>
+                                <p className='sm-phone'>{selectedUser.phone}</p>
+                            </div>
+                        </div>
+                    </div>
+                    : null}
+                <div>
+                    <p>Enter Amount</p>
+                    <input className='sm-phone' type="number" onChange={e => setAmount(e.target.value)} />
+                </div>
+                <button className='sm-btn' onClick={() => makeTransaction(selectedUser.phone)}>send money</button>
+            </div>
         </div>
 
     )
