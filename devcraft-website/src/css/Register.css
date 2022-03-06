@@ -1,10 +1,17 @@
+.reg-bg {
+    background-color: #6776FFF5;
+    height: 120vh;
+    padding-top: 140px;
+}
+
 .reg-container{
     width: 25%;
     margin: auto;
     padding: 40px;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     box-shadow: 2px;
-    box-shadow: 1px 10px 18px 3px #cdcdcd8c;
+    box-shadow: 0px 6px 18px 3px #0000008c;
+    background-color: white;
 }
 
 .reg-email {
@@ -29,10 +36,34 @@
 }
 
 .reg-btn {
-    margin-top: 10px;
+    margin-top: 20px;
     border: none;
     width: 125px;
     height: 40px;
     border-radius: 12px;
     cursor: pointer;
+    background-color: #6776FFF5;
+    color: white;
+}
+
+.reg-hr {
+    border: none;
+    height: 5px;
+    background: #6776FFF5;
+    margin-bottom: 50px;
+    width: 50%;
+}
+
+input:focus {
+    outline: none !important;
+    border:3px solid #6776FFF5 !important;
+    box-shadow: none !important;
+}
+
+.reg2-hr {
+    border: none;
+    height: 5px;
+    background: #6776FFF5;
+    margin-bottom: 20px;
+    width: 50%;
 }

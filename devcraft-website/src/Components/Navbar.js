@@ -13,7 +13,9 @@ function Navbar() {
   };
   return (
     <nav class="home-navbar navbar navbar-expand-lg">
-      <h1 class="navbar-brand" href="#">MaxMoney</h1>
+      <Link to="/">
+        <h1 class="navbar-brand" href="#">MaxMoney</h1>
+      </Link>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -25,9 +27,16 @@ function Navbar() {
           </li> */}
         </ul>
         {user && user.uid ?
-          <button className=" btn home-login" type="button" onClick={logout}>
-            Logout
-          </button>
+          <div>
+            <button className=" btn home-login" type="button" onClick={logout}>
+              Logout
+            </button>
+            <Link to="/overview">
+              <button className=" btn home-getstarted" type="button">
+                Dashboard
+              </button>
+            </Link>
+          </div>
           : <div>
             <Link to="/login">
               <button className=" btn home-login" type="button">

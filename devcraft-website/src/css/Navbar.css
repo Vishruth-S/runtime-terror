@@ -9,6 +9,11 @@
     color: white;
 }
 
+.home-navbar a {
+    text-decoration: none;
+    color: white;
+}
+
 .logo {
     padding: auto;
     width: 6rem;

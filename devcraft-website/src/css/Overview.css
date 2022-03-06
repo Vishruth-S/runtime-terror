@@ -1,5 +1,9 @@
 .ov-main-container {
-    width: 90%;
-    margin: auto;
+    /* width: 90%; */
+    padding: 10px 60px;
     margin-top: 20px;
+}
+
+.main-col {
+    padding-left: 50px;
 }

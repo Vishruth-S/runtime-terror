@@ -7,6 +7,7 @@ import { collection, getDocs, addDoc, updateDoc, doc, deleteDoc, setDoc } from "
 import { Navigate, useNavigate } from 'react-router-dom';
 import { Col, Form } from 'react-bootstrap';
 import { CreateBankAccount } from '../pages/CreateBankAccount'
+import '../css/Register.css'
 
 const RegisterDetails = () => {
     const [uid, setUid] = useState('')
@@ -81,6 +82,8 @@ const RegisterDetails = () => {
             {!redirect
                 ?
                 <div>
+                    <h3 className="mt-2"> Add details </h3>
+                    <hr className="reg2-hr" />
                     <Form noValidate validated={validated} onSubmit={handleSubmit}>
                         <Form.Group as={Col} md="10" controlId="validationCustom01">
                             <Form.Label>First name</Form.Label>

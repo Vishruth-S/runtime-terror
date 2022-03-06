@@ -7,6 +7,7 @@ import OverviewQuickTransfer from '../Components/OverviewQuickTransfer'
 import OverviewTransactions from '../Components/OverviewTransactions'
 import '../css/Overview.css'
 import { auth, db } from '../firebase-config'
+import Navbar from '../Components/Navbar'
 
 const Overview = () => {
     const [user, setUser] = useState({});
@@ -49,20 +50,23 @@ const Overview = () => {
     }, [user])
 
     return (
-        <div className='ov-main-container'>
-            <div className='row'>
-                <div className='col-2'>
-                    <OverviewProfile userData={userData} />
-                </div>
-                <div className='col-5'>
-                    <OverviewBalance accountData={accountData} />
-                </div>
-                <div className='col-5'>
-                    <OverviewQuickTransfer allUsers={allUsers} />
-                    <OverviewTransactions />
+        <>
+            <Navbar />
+            <div className='ov-main-container'>
+                <div className='row'>
+                    <div className='col-2 prof-col'>
+                        <OverviewProfile userData={userData} />
+                    </div>
+                    <div className='col-5 main-col'>
+                        <OverviewBalance accountData={accountData} />
+                    </div>
+                    <div className='col-5 t-col'>
+                        <OverviewQuickTransfer allUsers={allUsers} />
+                        <OverviewTransactions />
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

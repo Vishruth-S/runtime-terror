@@ -1,5 +1,7 @@
 .ov-profile-card {
     text-align: center;
+    padding: 10px;
+    margin-top: 40px;
 }
 
 .ov-profile-img {
@@ -7,6 +9,22 @@
 }
 
 .ov-profile-name {
-    font-size: 30px;
+    font-size: 25px;
 }
 
+.ov-tag {
+    width: 42px;
+}
+
+.ov-profile-box {
+    margin-top: 40px;
+}
+
+.ov-tag-t {
+    text-decoration: none;
+    color: black;
+}
+
+.ov-tag-t:hover {
+    text-decoration: none;
+}
