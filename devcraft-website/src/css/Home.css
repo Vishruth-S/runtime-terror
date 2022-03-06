@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    /* font-family: 'Poppins'; */
 }
 
 .homeinfo{
@@ -19,13 +20,18 @@
     margin-right: 1rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     background-color: #6776FFF5;
-    ;
+    color: white;
+    margin-top: 10px;
 }
 .home-body{
     background-color: #5e6ceef5;
+    margin-top: 120px;
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 80px;
 }
 
 .home-features{
@@ -33,4 +39,18 @@
     justify-content: space-evenly;
     align-items: center;
 
+}
+
+.home-main-title {
+    /* font-family: 'Roboto'; */
+    font-size: 4.5rem;
+    font-weight: 200;
+    line-height: 1.2;
+    margin-top: 150px;
+    font-weight: 700;
+}
+
+.home-nody-title {
+    margin-bottom: 50px;
+    font-size: 50px;
 }
