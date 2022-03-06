@@ -1,11 +1,10 @@
 ## Maxmoney - *get the maximum in everything*
 
-Demo: https://drive.google.com/file/d/1mSWmU8DSc6TYPIcx9nS92jyCtpCfzCWT/view?usp=sharing
-Figma link: https://www.figma.com/file/HA2h9ajcSJ5YFmdpY7eICE/DevCraft?node-id=0%3A1
-Schema: 
+Demo: https://drive.google.com/file/d/1mSWmU8DSc6TYPIcx9nS92jyCtpCfzCWT/view?usp=sharing    
+Figma link: https://www.figma.com/file/HA2h9ajcSJ5YFmdpY7eICE/DevCraft?node-id=0%3A1       
 
 ## Team Runtime Terror
-Members - 
+Members:- 
 1. Vishruth Subramanian
 2. Lisa V Cherian
 3. Aneetta Mary Sajan
