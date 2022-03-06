@@ -1,0 +1,48 @@
+.home-navbar {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #6776FFF5;
+
+}
+
+.logo {
+    padding: auto;
+    width: 6rem;
+}
+
+.home-navleft{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.home-login{
+    border-radius: 1.25rem;
+    border: 1px;
+    border-color: 3136B;
+    margin-right: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+
+}
+.home-getstarted{
+
+    border-radius: 1.25rem;
+    border: 1px;
+    border-color: 3136B;
+    margin-right: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    background-color: #3136B5;
+    color: azure;
+
+}
