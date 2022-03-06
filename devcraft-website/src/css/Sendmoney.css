@@ -1,10 +1,17 @@
+.sm-outer {    
+    background-color: #6776FFF5;
+    height: 120vh;
+    padding-top: 80px;
+}
+
 .send-money-container {
     width: 40%;
     margin: auto;
     text-align: center;
-    box-shadow: 0px 4px 20px 16px #c7c7c7;
+    box-shadow: 0px 6px 18px 3px #0000008c;
+    background-color: white;
     padding: 33px;
-    margin-top: 37px;
+
 }
 
 .send-money-results {
@@ -24,13 +31,13 @@
 }
 
 .sm-select:hover {
-    background-color: gray;
+    background-color: #6d7bff3b;
     cursor: pointer;
 }
 
 .sending-to {
     margin-top: 20px;
-    background-color: #c7c7c7;
+    background-color: #6d7bff59;
     padding: 5px;
 }
 

@@ -15,10 +15,10 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/overview" element={<Overview />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           {/* <Route path="/createacc" element={<RequireAuth><CreateBankAccount /></RequireAuth>} /> */}
+          <Route path="/overview" element={<RequireAuth><Overview /></RequireAuth>} />
           <Route path="/sendmoney" element={<RequireAuth><SendMoney /></RequireAuth>} />
           <Route path="/transactions" element={<RequireAuth><Transactions /></RequireAuth>} />
         </Routes>

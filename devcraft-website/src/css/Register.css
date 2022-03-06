@@ -67,3 +67,11 @@ input:focus {
     margin-bottom: 20px;
     width: 50%;
 }
+
+.img-col {
+    padding-left: 40px;
+}
+
+.name-col {
+    margin-left: -20px;
+}

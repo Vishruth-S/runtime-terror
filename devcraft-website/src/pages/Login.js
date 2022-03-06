@@ -8,6 +8,7 @@ import { auth } from "../firebase-config";
 // import './Login.css'
 import { Navigate } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import Navbar from "../Components/Navbar";
 
 function Login() {
     const [loginEmail, setLoginEmail] = useState("");
@@ -45,39 +46,50 @@ function Login() {
                     <h2>You are already logged in</h2>
                     <button onClick={logout}>logout</button>
                 </div>
-                : <div class="formC">
-                    <h2 class="title">
-                        welcome
-                    </h2>
-                    <div className="form">
-                        <input
-                            placeholder="Email..."
-                            onChange={(event) => {
-                                setLoginEmail(event.target.value);
-                            }}
-                        />
-                        <input
-                            placeholder="Password..."
-                            type="password"
-                            onChange={(event) => {
-                                setLoginPassword(event.target.value);
-                            }}
-                        />
+                :
+                <>
+                    <Navbar />
+                    <div className="reg-bg">
+                        <div className="reg-container">
+                            <h3 className="mb-1 mt-2"> Login </h3>
+                            <hr className="reg-hr" />
+                            <div className="form">
+                                <div className="reg-email-box">
+                                    <p className="reg-email">Email</p>
+                                    <input
+                                        placeholder="user@email.com"
+                                        onChange={(event) => {
+                                            setLoginEmail(event.target.value);
+                                        }}
+                                        className="reg-input"
+                                    />
+                                </div>
+                                <div className="reg-pass-box">
+                                    <p className="reg-pass">Password</p>
+                                    <input
+                                        placeholder="Password..."
+                                        type="password"
+                                        onChange={(event) => {
+                                            setLoginPassword(event.target.value);
+                                        }}
+                                        className="reg-input"
+                                    />
+                                </div>
+                                <button className="reg-btn" onClick={login}> Login</button>
+                            </div>
 
-                        <button onClick={login}> Login</button>
+                            < div class="bottom mt-4">
+                                <span>
+                                    Don't have an account?
+                                </span>
+                                <a href="/register">
+                                    Sign Up
+                                </a>
+                            </div>
+
+                        </div>
                     </div>
-
-                    < div class="bottom">
-                        <span>
-                            Don't have an account?
-                        </span>
-                        <a href="/register">
-                            Sign Up
-                        </a>
-                    </div>
-
-
-                </div>
+                </>
             }
 
         </>

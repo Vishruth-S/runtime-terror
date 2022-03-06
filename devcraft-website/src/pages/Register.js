@@ -9,6 +9,7 @@ import { auth } from "../firebase-config";
 import RegisterDetails from "../Components/RegisterDetails";
 import { useNavigate } from "react-router-dom";
 import '../css/Register.css'
+import Navbar from "../Components/Navbar";
 function Register() {
     const [registerEmail, setRegisterEmail] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
@@ -42,50 +43,54 @@ function Register() {
     };
 
     return (
-        <div className="reg-bg">
-            <div className="reg-container">
-                {!user &&
-                    <div className="form_container">
-                        <h3 className="mb-1 mt-2"> Sign Up </h3>
-                        <hr className="reg-hr" />
-                        {!nextStep && <form onSubmit={e => register(e)}>
-                            <div className="reg-email-box">
-                                <p className="reg-email">Email</p>
-                                <input
-                                    placeholder="user@email.com"
-                                    onChange={(event) => {
-                                        setRegisterEmail(event.target.value);
-                                    }}
-                                    className="reg-input"
-                                    required
-                                />
-                            </div>
-                            <div className="reg-pass-box">
-                                <p className="reg-pass">Password</p>
-                                <input
-                                    placeholder="password"
-                                    type="password"
-                                    onChange={(event) => {
-                                        setRegisterPassword(event.target.value);
-                                    }}
-                                    className="reg-input"
-                                    required
-                                />
+        <>
+            <Navbar />
+            <div className="reg-bg">
+                <div className="reg-container">
+                    {!user &&
+                        <div className="form_container">
+                            <h3 className="mb-1 mt-2"> Sign Up </h3>
+                            <hr className="reg-hr" />
+                            {!nextStep && <form onSubmit={e => register(e)}>
+                                <div className="reg-email-box">
+                                    <p className="reg-email">Email</p>
+                                    <input
+                                        placeholder="user@email.com"
+                                        onChange={(event) => {
+                                            setRegisterEmail(event.target.value);
+                                        }}
+                                        className="reg-input"
+                                        required
+                                    />
+                                </div>
+                                <div className="reg-pass-box">
+                                    <p className="reg-pass">Password</p>
+                                    <input
+                                        placeholder="password"
+                                        type="password"
+                                        onChange={(event) => {
+                                            setRegisterPassword(event.target.value);
+                                        }}
+                                        className="reg-input"
+                                        required
+                                    />
 
-                            </div>
-                            <div>
-                                <button className="reg-btn" type="submit"> Next </button>
-                            </div>
-                        </form>}
-                    </div>
+                                </div>
+                                <div>
+                                    <button className="reg-btn" type="submit"> Next </button>
+                                </div>
+                            </form>}
+                        </div>
 
-                }
-                {/* <h4> User Logged In: </h4> */}
-                {nextStep && user && user.uid ? mounted && <RegisterDetails /> : null}
-                {/* {user ? <button onClick={logout}> Sign Out </button> : null} */}
+                    }
+                    {/* <h4> User Logged In: </h4> */}
+                    {nextStep && user && user.uid ? mounted && <RegisterDetails /> : null}
+                    {/* {user ? <button onClick={logout}> Sign Out </button> : null} */}
 
+                </div>
             </div>
-        </div>
+        </>
+
     );
 }
 

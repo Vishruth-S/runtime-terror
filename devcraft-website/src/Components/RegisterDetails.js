@@ -8,8 +8,10 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import { Col, Form } from 'react-bootstrap';
 import { CreateBankAccount } from '../pages/CreateBankAccount'
 import '../css/Register.css'
+import { useAlert } from 'react-alert'
 
 const RegisterDetails = () => {
+    const alert = useAlert()
     const [uid, setUid] = useState('')
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -43,7 +45,7 @@ const RegisterDetails = () => {
         )
         console.log("hi")
         await CreateBankAccount(user)
-        alert("Account created successfully")
+        alert.show("Account created successfully")
         setRedirect(true)
     }
 

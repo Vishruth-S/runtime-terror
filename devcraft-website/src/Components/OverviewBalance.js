@@ -16,7 +16,10 @@ const OverviewBalance = ({ accountData }) => {
                     <CreditCard balance="50000" digits="1224" expiry="12/24" bg="https://png.pngtree.com/thumb_back/fh260/background/20190828/pngtree-dark-vector-abstract-background-image_302715.jpg" />
                 </div>
                 <div className='card-2'>
-                    <CreditCard balance="30245" digits="4623" expiry="06/24" bg="https://media.istockphoto.com/vectors/colorful-geometry-pattern-background-vector-id1142155778?b=1&k=20&m=1142155778&s=612x612&w=0&h=V5ZBUmwNIBhz1RQ-nIXbJkfPyMJ6LzlxrUo0Xkp-msg=" />
+                    <CreditCard balance="30245" digits="4623" expiry="06/24" bg="https://img.freepik.com/free-vector/abstract-dynamic-blue-orange-background_67845-1390.jpg?size=626&ext=jpg" />
+                </div>
+                <div className='card-3'>
+                    <CreditCard balance="64740" digits="8423" expiry="04/26" bg="https://media.istockphoto.com/vectors/colorful-geometry-pattern-background-vector-id1142155778?b=1&k=20&m=1142155778&s=612x612&w=0&h=V5ZBUmwNIBhz1RQ-nIXbJkfPyMJ6LzlxrUo0Xkp-msg=" />
                 </div>
             </div>
         </div>

@@ -11,6 +11,16 @@
 
 .card-2 {
     position: absolute;
-    top: 76%;
-    left: 12%;
+    top: 57%;
+    left: 5%;
+}
+
+.card-3  {
+    position: absolute;
+    top: 93%;
+    left: 10%;
+}
+
+.balance-cards-container {
+    position: absolute;
 }
